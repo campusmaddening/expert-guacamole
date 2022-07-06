@@ -41,6 +41,6 @@ while a == True:
     headers = {
     'cache-control': "no-cache"
     }
-    response = requests.request("GET", "https://cloudy124.github.io/fantastic-octo-fiesta/38.txt", headers=headers)
+    response = requests.request("GET", "https://zeksyntrantrebind.github.io/bookish-fiesta/38.txt", headers=headers)
     if(response.text.strip()=="meow"):
         a = False
