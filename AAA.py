@@ -28,9 +28,12 @@ options.add_argument('--user-data-dir=rawr')
 options.add_argument("--remote-debugging-port=38223")
 driver = uc.Chrome(options=options, version_main=103)  # version_main allows to specify your chrome version instead of following chrome global version
 driver.set_window_size(1920, 1080)
-driver.execute_script('''window.open("https://konto-pocztowe.interia.pl/#/nowe-konto/darmowe","_blank");''')
+driver.execute_script('''window.open("https://example.com","_blank");''')
+time.sleep(3)
 driver.switch_to.window(driver.window_handles[1])
-time.sleep(2)
+time.sleep(5)
+driver.get("https://konto-pocztowe.interia.pl/#/nowe-konto/darmowe")
+time.sleep(3)
 driver.find_element(By.XPATH, "/html/body/div[3]/div[2]/button[3]").click()
 time.sleep(1)
 usernamerepl = "".join(random.sample(username_for, 6))
@@ -79,7 +82,7 @@ while a==True:
       a = False
   else:
       time.sleep(0.4)
-time.sleep(20)
+time.sleep(222)
 driver.switch_to.window(driver.window_handles[1])
 time.sleep(1)
 driver.find_element(By.XPATH, "/html/body/div[2]/section[3]/div[1]/div[1]/section/ul/li[1]/div[2]/div[1]").click()
